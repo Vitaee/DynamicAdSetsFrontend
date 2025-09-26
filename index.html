@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/src/assets/favico.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/src/index.css" rel="stylesheet">
+    <script>
+      // Persisted theme without FOUC
+      (function(){
+        try {
+          const user = localStorage.getItem('theme');
+          const system = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          const theme = user || system;
+          if (theme === 'dark') document.documentElement.classList.add('dark');
+        } catch(e) { /* noop */ }
+      })();
+    </script>
+    <title>WeatherTrigger — Sign up</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

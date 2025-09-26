@@ -1,0 +1,167 @@
+/* WeatherTrigger Design System - Eye-Friendly Themes */
+
+:root {
+  /* === LIGHT THEME (Eye-Friendly White) === */
+  
+  /* Primary Colors - Calming blues that reduce eye strain */
+  --wt-primary-50: 249 250 251;   /* Almost white with warm undertone */
+  --wt-primary-100: 243 244 246;  /* Soft warm gray */
+  --wt-primary-200: 229 231 235;  /* Light warm gray */
+  --wt-primary-500: 99 102 241;   /* Main brand blue */
+  --wt-primary-600: 79 70 229;    /* Darker brand blue */
+  --wt-primary-700: 67 56 202;    /* Deep brand blue */
+  
+  /* Neutral Colors - Warm grays to reduce harsh contrast */
+  --wt-neutral-50: 251 251 251;   /* Warm white background */
+  --wt-neutral-100: 246 247 248;  /* Very light warm gray */
+  --wt-neutral-200: 237 238 240;  /* Light warm gray */
+  --wt-neutral-300: 207 209 213;  /* Medium light gray */
+  --wt-neutral-400: 156 160 166;  /* Balanced gray */
+  --wt-neutral-500: 107 112 117;  /* Medium gray */
+  --wt-neutral-600: 75 80 86;     /* Dark gray */
+  --wt-neutral-700: 55 59 64;     /* Very dark gray */
+  --wt-neutral-800: 37 40 43;     /* Almost black */
+  --wt-neutral-900: 24 26 28;     /* Deep black */
+  
+  /* Semantic Colors - Accessible and clear */
+  --wt-success-50: 247 254 231;   /* Light green background */
+  --wt-success-500: 34 197 94;    /* Success green */
+  --wt-success-600: 22 163 74;    /* Darker success green */
+  
+  --wt-warning-50: 255 251 235;   /* Light yellow background */
+  --wt-warning-500: 245 158 11;   /* Warning orange */
+  --wt-warning-600: 217 119 6;    /* Darker warning orange */
+  
+  --wt-error-50: 254 242 242;     /* Light red background */
+  --wt-error-500: 239 68 68;      /* Error red */
+  --wt-error-600: 220 38 38;      /* Darker error red */
+  
+  --wt-info-50: 239 246 255;      /* Light blue background */
+  --wt-info-500: 59 130 246;      /* Info blue */
+  --wt-info-600: 37 99 235;       /* Darker info blue */
+  
+  /* === LIGHT THEME TOKENS === */
+  --wt-background: var(--wt-neutral-50);        /* Main background */
+  --wt-surface: var(--wt-neutral-100);          /* Card/panel background */
+  --wt-surface-elevated: 255 255 255;           /* Elevated surfaces (modals, dropdowns) */
+  --wt-surface-hover: var(--wt-neutral-200);    /* Hover states */
+  
+  --wt-foreground: var(--wt-neutral-800);       /* Primary text */
+  --wt-foreground-muted: var(--wt-neutral-600); /* Secondary text */
+  --wt-foreground-subtle: var(--wt-neutral-500); /* Tertiary text */
+  
+  --wt-border: var(--wt-neutral-200);           /* Default borders */
+  --wt-border-strong: var(--wt-neutral-300);    /* Emphasized borders */
+  --wt-border-subtle: var(--wt-neutral-100);    /* Subtle borders */
+  
+  --wt-ring: var(--wt-primary-500);             /* Focus rings */
+  --wt-ring-offset: var(--wt-neutral-50);       /* Focus ring offset */
+  
+  /* Interactive States */
+  --wt-interactive-primary: var(--wt-primary-500);
+  --wt-interactive-primary-hover: var(--wt-primary-600);
+  --wt-interactive-primary-active: var(--wt-primary-700);
+  
+  /* Shadows for depth without harshness */
+  --wt-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --wt-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --wt-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --wt-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* === DARK THEME === */
+.dark {
+  /* Primary Colors - Softer blues for dark mode */
+  --wt-primary-400: 129 140 248;  /* Light brand blue */
+  --wt-primary-500: 99 102 241;   /* Main brand blue */
+  --wt-primary-600: 79 70 229;    /* Darker brand blue */
+  
+  /* Neutral Colors - Rich dark grays */
+  --wt-neutral-50: 249 250 251;   /* Light (for dark theme contrast) */
+  --wt-neutral-100: 243 244 246;  /* Very light */
+  --wt-neutral-200: 229 231 235;  /* Light */
+  --wt-neutral-700: 55 65 81;     /* Dark surface */
+  --wt-neutral-800: 31 41 55;     /* Darker surface */
+  --wt-neutral-850: 26 33 42;     /* Custom darker surface */
+  --wt-neutral-900: 17 24 39;     /* Darkest surface */
+  --wt-neutral-950: 12 17 29;     /* Ultra dark */
+  
+  /* === DARK THEME TOKENS === */
+  --wt-background: var(--wt-neutral-900);       /* Main background */
+  --wt-surface: var(--wt-neutral-850);          /* Card/panel background */
+  --wt-surface-elevated: var(--wt-neutral-800); /* Elevated surfaces */
+  --wt-surface-hover: var(--wt-neutral-700);    /* Hover states */
+  
+  --wt-foreground: var(--wt-neutral-100);       /* Primary text */
+  --wt-foreground-muted: var(--wt-neutral-200); /* Secondary text */
+  --wt-foreground-subtle: 156 163 175;          /* Tertiary text (gray-400) */
+  
+  --wt-border: var(--wt-neutral-700);           /* Default borders */
+  --wt-border-strong: var(--wt-neutral-600);    /* Emphasized borders */
+  --wt-border-subtle: var(--wt-neutral-800);    /* Subtle borders */
+  
+  --wt-ring: var(--wt-primary-400);             /* Focus rings */
+  --wt-ring-offset: var(--wt-neutral-900);      /* Focus ring offset */
+  
+  /* Interactive States */
+  --wt-interactive-primary: var(--wt-primary-500);
+  --wt-interactive-primary-hover: var(--wt-primary-400);
+  --wt-interactive-primary-active: var(--wt-primary-600);
+  
+  /* Shadows for depth in dark mode */
+  --wt-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --wt-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --wt-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  --wt-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+}
+
+/* === COMPONENT TOKENS === */
+:root, .dark {
+  /* Form Elements */
+  --wt-input-background: rgb(var(--wt-surface-elevated));
+  --wt-input-border: rgb(var(--wt-border));
+  --wt-input-border-focus: rgb(var(--wt-ring));
+  --wt-input-foreground: rgb(var(--wt-foreground));
+  --wt-input-placeholder: rgb(var(--wt-foreground-subtle));
+  
+  /* Buttons */
+  --wt-button-primary-background: rgb(var(--wt-interactive-primary));
+  --wt-button-primary-background-hover: rgb(var(--wt-interactive-primary-hover));
+  --wt-button-primary-background-active: rgb(var(--wt-interactive-primary-active));
+  --wt-button-primary-foreground: rgb(255 255 255);
+  
+  --wt-button-ghost-foreground: rgb(var(--wt-interactive-primary));
+  --wt-button-ghost-background-hover: rgb(var(--wt-surface-hover));
+  
+  /* Cards & Surfaces */
+  --wt-card-background: rgb(var(--wt-surface-elevated));
+  --wt-card-border: rgb(var(--wt-border));
+  --wt-card-shadow: var(--wt-shadow);
+  
+  /* Navigation */
+  --wt-nav-background: rgba(var(--wt-surface-elevated), 0.9);
+  --wt-nav-border: rgba(var(--wt-border), 0.8);
+  --wt-nav-backdrop-blur: 12px;
+}
+
+/* === ACCESSIBILITY FEATURES === */
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --wt-transition-duration: 0.01ms;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --wt-border: var(--wt-neutral-800);
+    --wt-border-strong: var(--wt-neutral-900);
+  }
+  
+  .dark {
+    --wt-border: var(--wt-neutral-100);
+    --wt-border-strong: var(--wt-neutral-50);
+  }
+}

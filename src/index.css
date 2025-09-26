@@ -1,0 +1,234 @@
+@import "tailwindcss";
+@import "./styles/themes.css";
+
+/* === BASE STYLES === */
+@layer base {
+  /* Reset and foundational styles */
+  html, body, #root { 
+    height: 100%; 
+    transition-property: background-color, color;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out;
+  }
+  
+  body { 
+    background-color: rgb(var(--wt-background));
+    color: rgb(var(--wt-foreground));
+    
+    /* Improve text rendering for better readability */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  
+  /* Improve focus visibility for accessibility */
+  *:focus-visible {
+    outline: 2px solid rgb(var(--wt-ring));
+    outline-offset: 2px;
+  }
+}
+
+/* === COMPONENT STYLES === */
+@layer components {
+  /* Form Input - Eye-friendly with proper contrast */
+  .wt-input {
+    @apply w-full rounded-xl px-4 py-2.5 text-sm outline-none transition-all duration-200;
+    
+    background-color: var(--wt-input-background);
+    border: 1px solid var(--wt-input-border);
+    color: var(--wt-input-foreground);
+    
+    &::placeholder {
+      color: var(--wt-input-placeholder);
+    }
+    
+    &:focus {
+      border-color: var(--wt-input-border-focus);
+      box-shadow: 0 0 0 3px rgba(var(--wt-ring), 0.1);
+    }
+    
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+  
+  /* Label - Consistent typography */
+  .wt-label { 
+    @apply block text-sm font-medium mb-2;
+    color: rgb(var(--wt-foreground-muted));
+  }
+  
+  /* Primary Button - Accessible and consistent */
+  .wt-button {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold tracking-wide shadow-sm outline-none transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+    
+    background-color: var(--wt-button-primary-background);
+    color: var(--wt-button-primary-foreground);
+    
+    &:hover:not(:disabled) {
+      background-color: var(--wt-button-primary-background-hover);
+      transform: translateY(-1px);
+      box-shadow: var(--wt-shadow-md);
+    }
+    
+    &:active:not(:disabled) {
+      background-color: var(--wt-button-primary-background-active);
+      transform: translateY(0);
+    }
+    
+    &:focus-visible {
+      box-shadow: 0 0 0 3px rgba(var(--wt-ring), 0.3);
+    }
+  }
+  
+  /* Ghost Button Variant */
+  .wt-button-ghost {
+    @apply px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200;
+    
+    color: var(--wt-button-ghost-foreground);
+    background-color: transparent;
+    
+    &:hover {
+      background-color: var(--wt-button-ghost-background-hover);
+    }
+    
+    &:focus-visible {
+      box-shadow: 0 0 0 2px rgba(var(--wt-ring), 0.3);
+    }
+  }
+  
+  /* Checkbox - Accessible and themed */
+  .wt-checkbox {
+    @apply h-4 w-4 shrink-0 rounded transition-all duration-200;
+    
+    background-color: var(--wt-input-background);
+    border: 1px solid var(--wt-input-border);
+    color: rgb(var(--wt-interactive-primary));
+    
+    &:focus {
+      box-shadow: 0 0 0 2px rgba(var(--wt-ring), 0.2);
+    }
+    
+    &:checked {
+      background-color: rgb(var(--wt-interactive-primary));
+      border-color: rgb(var(--wt-interactive-primary));
+    }
+  }
+  
+  /* Card - Elevated surface with proper contrast */
+  .wt-card { 
+    @apply rounded-2xl transition-all duration-200;
+    
+    background-color: var(--wt-card-background);
+    border: 1px solid var(--wt-card-border);
+    box-shadow: var(--wt-card-shadow);
+    
+    &:hover {
+      box-shadow: var(--wt-shadow-md);
+      transform: translateY(-1px);
+    }
+  }
+  
+  /* Navigation Bar - Backdrop blur with theme support */
+  .wt-navbar {
+    background-color: var(--wt-nav-background);
+    border-bottom: 1px solid var(--wt-nav-border);
+    backdrop-filter: blur(var(--wt-nav-backdrop-blur));
+    -webkit-backdrop-filter: blur(var(--wt-nav-backdrop-blur));
+  }
+  
+  /* Status Badges - Semantic colors with proper contrast */
+  .wt-badge {
+    @apply inline-flex items-center px-2 py-1 text-xs font-medium rounded-md;
+    
+    &.wt-badge-success {
+      background-color: rgb(var(--wt-success-50));
+      color: rgb(var(--wt-success-600));
+      
+      .dark & {
+        background-color: rgba(var(--wt-success-500), 0.1);
+        color: rgb(34 197 94); /* success-500 */
+      }
+    }
+    
+    &.wt-badge-warning {
+      background-color: rgb(var(--wt-warning-50));
+      color: rgb(var(--wt-warning-600));
+      
+      .dark & {
+        background-color: rgba(var(--wt-warning-500), 0.1);
+        color: rgb(245 158 11); /* warning-500 */
+      }
+    }
+    
+    &.wt-badge-error {
+      background-color: rgb(var(--wt-error-50));
+      color: rgb(var(--wt-error-600));
+      
+      .dark & {
+        background-color: rgba(var(--wt-error-500), 0.1);
+        color: rgb(239 68 68); /* error-500 */
+      }
+    }
+    
+    &.wt-badge-info {
+      background-color: rgb(var(--wt-info-50));
+      color: rgb(var(--wt-info-600));
+      
+      .dark & {
+        background-color: rgba(var(--wt-info-500), 0.1);
+        color: rgb(59 130 246); /* info-500 */
+      }
+    }
+    
+    &.wt-badge-neutral {
+      background-color: rgb(var(--wt-surface-hover));
+      color: rgb(var(--wt-foreground-muted));
+    }
+  }
+  
+  /* Loading State */
+  .wt-loading {
+    @apply animate-pulse;
+    background-color: rgb(var(--wt-surface-hover));
+  }
+  
+  /* Divider */
+  .wt-divider {
+    @apply border-0 border-t;
+    border-color: rgb(var(--wt-border));
+  }
+}
+
+/* === UTILITY CLASSES === */
+@layer utilities {
+  .container-narrow { 
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; 
+  }
+  
+  /* Theme-aware text colors */
+  .text-foreground { color: rgb(var(--wt-foreground)); }
+  .text-primary { color: rgb(var(--wt-interactive-primary)); }
+  .text-muted { color: rgb(var(--wt-foreground-muted)); }
+  .text-subtle { color: rgb(var(--wt-foreground-subtle)); }
+  
+  /* Theme-aware background colors */
+  .bg-surface { background-color: rgb(var(--wt-surface)); }
+  .bg-surface-elevated { background-color: rgb(var(--wt-surface-elevated)); }
+  .bg-surface-hover { background-color: rgb(var(--wt-surface-hover)); }
+  
+  /* Theme-aware border colors */
+  .border-default { border-color: rgb(var(--wt-border)); }
+  .border-strong { border-color: rgb(var(--wt-border-strong)); }
+  .border-subtle { border-color: rgb(var(--wt-border-subtle)); }
+  .divide-subtle > * + * { border-color: rgb(var(--wt-border-subtle)); }
+  
+  /* Focus ring utility */
+  .focus-ring {
+    &:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(var(--wt-ring), 0.3);
+    }
+  }
+}
